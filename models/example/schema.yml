@@ -1,21 +1,26 @@
-
 version: 2
 
-models:
-  - name: my_first_dbt_model
-    description: "A starter dbt model"
-    columns:
+sources:
+  - name: test
+    description: "sample data"
+    database: test
+    schema: public
+    tables:
+      - name: team_locations
+        description: '{{ doc("team_locations") }}'
+      - name: example_teams
+        description: '{{ doc("example_teams") }}'
+      - name: car_color
+        description: '{{ doc("car_color") }}'
+      - name: car_type
+        description: '{{ doc("car_type") }}'
+      - name: products
+        description: '{{ doc("products") }}'
       - name: id
-        description: "The primary key for this table"
-        tests:
-          - unique
-          - not_null
+        description: '{{ doc("id") }}'
+      - name: date
+        description: '{{ doc("date") }}'
 
-  - name: my_second_dbt_model
-    description: "A starter dbt model"
-    columns:
-      - name: id
-        description: "The primary key for this table"
-        tests:
-          - unique
-          - not_null
+models:
+  - name: products
+    description: '{{ doc("products") }}'

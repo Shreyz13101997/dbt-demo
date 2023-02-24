@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: test
+    description: car color and type.
+    database: test
+    schema: public
+    tables:
+      - name: customer_detail
+        description: '{{ doc("customer_detail") }}'

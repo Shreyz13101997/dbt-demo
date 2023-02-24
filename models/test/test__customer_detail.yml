@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: test__customer_detail
+    columns:
+      - name: customer_city
+        tests:
+          - city_not_jaipur
